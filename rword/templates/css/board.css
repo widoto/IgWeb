@@ -1,0 +1,364 @@
+/*수정 시작*/
+@import url('https://fonts.googleapis.com/css2?family=Mouse+Memoirs&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Mouse+Memoirs&family=Open+Sans&family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Mouse+Memoirs&family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Do+Hyeon&family=Rubik+Moonrocks&display=swap');
+@import url('https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css');
+@font-face {
+  font-family: 'SLEIGothicTTF';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2104@1.0/SLEIGothicTTF.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'YES24';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_13@1.0/YES24.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+    font-family: 'HallymGothic-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2204@1.0/HallymGothic-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+
+.navbar-nav {
+    --bs-nav-link-hover-color:#C0C53F !important;
+}
+
+.togglers{
+    background-color:white;
+    border-radius: 20 !important;
+}
+
+.navbackground{
+    background-color: #000000;
+}
+
+.menu{
+    font-size: 20px !important;
+    margin-right: 30px !important;
+    font-family: 'Open Sans', sans-serif !important;
+    font-weight: bold !important;
+    color:white !important; 
+}
+
+.menu:hover{
+    color:#C0C53F !important;
+}
+
+section {
+    
+    background-color: #0C090A;
+}
+
+#footer{
+    background-color: #101010; 
+}
+
+/*footer*/
+
+.footer{
+    background-color: #C0C53F;
+}
+
+.fbox{
+  background-color: #101010; 
+  width:100%;
+  text-align: center;
+}
+
+.footertext{
+  text-align: center;
+  padding-top: 70px;
+  padding-bottom: 100px;
+  color:white;
+  width:100%;
+}
+
+
+.footerImg{
+    border-radius: 8%;
+    margin-top: 8%;
+}
+
+/*수정 끝*/
+
+html {
+    background-color: #0C090A;
+}
+
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+.main {
+    padding: 80px 0;
+    width: 65%;
+    margin: 0 auto;
+}
+
+
+.page-title {
+    /*
+    overflow: hidden;
+    height: 400px;
+    
+    
+    max-height:800px;
+    
+    margin: 0 auto;
+    width: 100%;
+    */
+    width: 100%;
+    max-height: 400px;
+    overflow: hidden;
+    margin: 0 auto;
+    position: relative;
+}
+
+.main-title{
+    margin-top: 40px;
+}
+
+
+.page-title img{
+    /*margin-left: -65%;
+    max-height: initial; 
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);*/
+    margin-top: -15%;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: grayscale(100%);
+
+}
+
+.title-div {
+    position: absolute;
+    top: 40%;
+	left: 50%;
+    transform: translate( -50%, -50% );
+    display: block;
+}
+
+#title {
+    font-weight: bold;
+    color: white;
+    font-size: 40px;
+}
+
+.page-title h3 {
+    font-size: 28px;
+    color: #333333;
+    font-weight: 400;
+    text-align: center;
+    font-family: 'Mouse Memoirs', sans-serif;
+}
+
+#search {
+    border-radius: 8px;
+    font-family: 'nanumsquare';
+}
+#board-search {
+    margin-bottom: 20px;
+}
+
+.btn strong {
+    font-family: 'nanumsquare';
+}
+#board-search .search-window {
+    padding: 15px 0;
+    background-color: #0C090A;
+}
+#board-search .search-window .search-wrap {
+    position: relative;
+/*   padding-right: 124px; */
+    margin: 0 auto;
+    width: 80%;
+    max-width: 564px;
+}
+#board-search .search-window .search-wrap input {
+    height: 40px;
+    width: 100%;
+    font-size: 14px;
+    padding: 7px 14px;
+    border: 1px solid #ccc;
+}
+#board-search .search-window .search-wrap input:focus {
+    border-color: #333;
+    outline: 0;
+    border-width: 1px;
+}
+#board-search .search-window .search-wrap .btn {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 108px;
+    padding: 0;
+    font-size: 16px;
+}
+
+.board-table {
+    font-size: 13px;
+    width: 100%;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+
+.board-table a {
+    color: rgb(222, 222, 222);
+    display: inline-block;
+    line-height: 1.4;
+    word-break: break-all;
+    vertical-align: middle;
+    font-family: 'nanumsquare';
+}
+.board-table a:hover {
+    text-decoration: underline;
+    color: white;
+}
+
+.board-table th {
+    text-align: center;
+    color: rgb(222, 222, 222);
+}
+
+.board-table .th-num {
+    width: 100px;
+    text-align: center;
+}
+
+.board-table .th-date {
+    width: 200px;
+}
+
+.board-table .th-writer {
+    width: 200px;
+}
+
+.board-table th, .board-table td {
+    padding: 14px 0;
+    font-family: 'nanumsquare';
+}
+
+.board-table tbody td {
+    border-top: 1px solid #e7e7e7;
+    text-align: center;
+    color: #c0c0c0;
+}
+
+
+.board-table tbody th {
+    padding-left: 28px;
+    padding-right: 14px;
+    border-top: 1px solid #e7e7e7;
+    text-align: left;
+}
+
+.board-table tbody th p{
+    display: none;
+}
+
+.btn strong{
+    color: black;
+}
+/*
+.btn {
+    display: inline-block;
+    padding: 0 30px;
+    font-size: 15px;
+    font-weight: 400;
+    background: transparent;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid transparent;
+    text-transform: uppercase;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+
+.btn-dark {
+    background: #555;
+    color: #fff;
+}
+
+.btn-dark:hover, .btn-dark:focus {
+    background: #373737;
+    border-color: #373737;
+    color: #fff;
+}
+
+.btn-dark {
+    background: #555;
+    color: #fff;
+}
+
+.btn-dark:hover, .btn-dark:focus {
+    background: #373737;
+    border-color: #373737;
+    color: #fff;
+}
+*/
+
+/* reset */
+
+* {
+    list-style: none;
+    text-decoration: none;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.clearfix:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+.container {
+    width: 1100px;
+    margin: 0 auto;
+}
+.blind {
+    position: absolute;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    margin: -1px;
+    width: 1px;
+    height: 1px;
+}
+th a {
+    text-decoration: none;
+}
+
+th a:hover {
+    color: black;
+}
+
+tbody tr:hover {
+    background-color: #333333;
+}

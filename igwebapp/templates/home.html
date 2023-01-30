@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ig-Web</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+    <link rel="icon" sizes="192x192" href="/static/img/favicon.png">
+    <link rel="stylesheet" type="text/css" href="/static/css/home.css">
+    <nav class="navbar navbar-expand-sm fixed-top navbackground navmargin">    
+        <div class="container-fluid"> 
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">        
+                <span class="navbar-toggler-icon togglers" ></span>    
+            </button>     
+            <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">        
+                <ul class="navbar-nav mt-2 mb-2 menugroup">        
+                    <li class="nav-item mr-3" data-mid="0">            
+                        <a class="nav-link menu randommenu" href="{% url 'rwordpage' %}" data-mid="0">랜덤 단어 생성하기</a>        
+                    </li>        
+                    <li class="nav-item mr-3" data-mid="1">            
+                        <a class="nav-link menu" href="#" data-mid="1">문장 공유하기</a>        
+                    </li>        
+                    <li class="nav-item mr-3" data-mid="2">            
+                        <a class="nav-link menu" href="{% url 'board:board_list' %}" data-mid="2">일반인 게시판</a>        
+                    </li>        
+                    <li class="nav-item mr-3">            
+                        <a class="nav-link menu" href="{% url 'board:board_list' %}" data-mid="3">과학자 게시판</a>        
+                    </li>        
+                </ul>    
+            </div>    
+        </div>
+    </nav>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+    <section> 
+        <!--login modal--><!--로그인 모달-->
+        <div class="modal fade" data-keyboard="false" data-backdrop="static"  id="ModalForm" tabindex="-1" aria-hidden="true"  >
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <!-- Login Form -->
+                    <form action="">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Welcome to Ig Web!</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div>
+                                <label for="Username1" class="logintext">아이디<span class="text-danger">*</span></label>
+                                <input type="text" name="username" class="form-control logintext" id="Username1" placeholder="아이디를 입력해주세요.">
+                            </div>
+                            <div class="mt-4">
+                                <label for="Password1" class="logintext">비밀번호<span class="text-danger">*</span></label>
+                                <input type="password" name="password" class="form-control logintext" id="Password1" placeholder="비밀번호를 입력해주세요.">
+                            </div>
+                            <div class="mb-3 alertb1"><!--입력을 안하고 버튼을 누를 때-->
+                            </div>
+                        </div>
+                        <div class="modal-footer pt-4">                  
+                            <button type="button" class="btn btn-success mx-auto w-100 loginbtn logintext">로그인</button><!--로그인 버튼-->
+                        </div>
+                        <p class="text-center logintext">아직 회원이 아니라면? <a href="/accounts/signup" class="gsignup"><b>회원가입</b></a></p> <!--회원가입하러 이동-->
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!--이 아래 부분(ModalForm2)은 신경안쓰셔도 됩니다!--><!--아무것도 넣지 않으셔도 되어요! 스크롤 조정 맞추려고 안뺀것입니다!-->
+        <div class="modal fade" id="ModalForm2" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <form action="">
+                    <div class="modal-header">
+                    <h5 class="modal-title">Sign Up for Ig-Web</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="Username2">Username<span class="text-danger">*</span></label>
+                        <input type="text" name="username2" class="form-control" id="Username2" placeholder="Enter Username">
+                    </div>
+                    <div class="mb-3">
+                        <label for="Password2">Password<span class="text-danger">*</span></label>
+                        <input type="password" name="password2" class="form-control" id="Password2" placeholder="Enter Password">
+                    </div>
+                    <div class="mb-3 alertb2">
+                    </div>
+                    </div>
+                    <div class="modal-footer pt-4">                  
+                    <button type="button" class="btn btn-success mx-auto w-100 signupbtn">Sign Up</button>
+                    </div>
+                </form>
+            </div>
+            </div>
+        </div>
+        <!--여기까지 신경안쓰셔도 됩니다! 아무것도 넣지 않으셔도 되어요-->
+    </section>
+    <!--제목부터 난이도까지 title to level select-->
+    <section id="main"> 
+        <div class="bg">
+            <video muted autoplay loop class="videobg">
+              <source src="/static/video/bulb2.mp4" type="video/mp4">
+            </video>
+            <h1 class="text-flicker-in-glow maintitle">Ig-<br>WEB</h1>
+        </div>
+    </section>
+    <section id="intro" class="mb-5 mx-auto">
+        <div class="container mx-auto">
+            <div class="row contentbox">
+                <div class="col-md-8 mt-5">
+                    <br><br><br><br>
+                    <p class="ignovel mt-5" data-content="LAUGH THEN...THINK!">LAUGH THEN...THINK!</p>
+                    <p class="ltt mt-5">
+                        "웃기니까 웃는데... 생각해보니 일리가 있네?"</p><br>
+                    <p class="ignovelcontent mt-3">
+                        쓸데없지만 과학적으로 의미있는 연구에 대해 상을 주는 이그노벨상을 아시나요?<br>
+                        <br><br>
+                        식빵은 잼을 바른 면이 먼저떨어진다거나, <br>
+                        코뿔소는 거꾸로 매달아 옮기는 것이 합리적이라거나,<br>
+                        영화 장르에 따라 관람객의 몸에서 나는 냄새가 다르다거나...<br>
+                        쓸데없는 것에 관심을 가지고 탄생한 논문이 이그노벨상을 받을 자격이 있습니다!
+                    </p>
+                </div>
+                <div class="col-md-4 mt-5">
+                    <img src="/static/img/scientist.gif" class="korean">
+                    <img src="/static/img/tv.png" class="tv">
+                </div>
+            </div>
+            <div class="row contentbox mt-5">
+                <hr class="separateline"><br><br>
+                <div class="col-md-4 mt-5">
+                    <img src="/static/img/goatbd.png" class="goat">
+                </div>
+                <div class="col-md-8 mt-5">
+                    <p class="ignovelcontent mt-3 ml-3">
+                        Ig(쓸모없는)-Web은 <b style="color:#C0C53F">랜덤단어</b>를 지급해 창의적이고, 쓸데없고, 기발한 문장을 창조하도록 도와,<br> 
+                        그러한 문장을 누구나 <b style="color:#C0C53F">실험해보고, 공유하면서</b> 엉뚱하지만 위대한 업적을 달성할 수 있도록 합니다.<br><br> 
+                        Laugh then Think!  쓸모없지만 쓸모있는 이그웹에 방문해보세요!<br>
+                        우리 모두 괴짜 노벨상의 주인공이 될 자격이 있습니다.
+                    </p>
+                </div>   
+            </div>
+        </div>
+    </section>
+    <section class="my-5 py-5 px-5"></section>
+    <section id="level" class="my-5 py-5 px-5 mx-auto container ignovelcontent">
+        <div class="mx-auto">
+            <div class="row">
+                <div class="col-md-12 mentdiffi">
+                    <span class="mentdiffititle difficulty" data-content="Pick difficulty" >Pick difficulty</span>
+                    <p class="ment mt-3">생성되는 <b>랜덤단어</b>를 이용하여 이그노벨상의 영감이 될 문장을 공유해보세요.</p>                    
+                </div>
+            </div>
+            <div class="row mt-5"><!--난이도 선택 버튼-->
+                <div class="btn-group col-md-12 mx-auto btngroup" role="group" aria-label="Basic radio toggle button group">
+                    <input data-id="0" type="radio" class="btn-check btncheck" name="btnradio" id="btnradio1" autocomplete="off" checked>
+                    <label data-id="0" class="btn btn-outline-primary radiobtn" for="btnradio1">3 Words</label>
+                  
+                    <input data-id="1" type="radio" class="btn-check btncheck" name="btnradio" id="btnradio2" autocomplete="off">
+                    <label data-id="1" class="btn btn-outline-primary radiobtn" for="btnradio2">4 Words</label>
+                  
+                    <input data-id="2" type="radio" class="btn-check btncheck" name="btnradio" id="btnradio3" autocomplete="off">
+                    <label data-id="2" class="btn btn-outline-primary radiobtn" for="btnradio3">5 Words</label>
+                </div>
+            </div>
+            <div id="random"><!--단어 개수를 선택한 결과가 나오는 부분-->
+                <div class="row">
+                    <div class="lwords row mx-auto">
+                        <p class="wordspan col-md-4">word3</p>
+                        <p class="wordspan col-md-4">word3</p>
+                        <p class="wordspan col-md-4">word3</p>
+                    </div>
+                    <div class="lwords row mx-auto">
+                        <p class="wordspan col-md-3">word4</p>
+                        <p class="wordspan col-md-3">word4</p>
+                        <p class="wordspan col-md-3">word4</p>
+                        <p class="wordspan col-md-3">word4</p>
+                    </div>
+                    <div class="lwords row mx-auto">
+                        <p class="wordspan col-md-3">word5</p>
+                        <p class="wordspan col-md-3">word5</p>
+                        <p class="wordspan col-md-3">word5</p>
+                        <p class="wordspan col-md-3">word5</p>
+                        <p class="wordspan col-md-3">word5</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-5">
+                <div>
+                    <img src="/static/img/thinking.png" class="thinking">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--making sentence 문장 생성 파트-->
+    <section id="sentence" class="ignovelcontent mx-auto">
+        <div class="container">
+            <p class="ignovel mt-5" data-content="MAKE SENTENCE">MAKE SENTENCE</p>
+            <div class="row">
+                <form>
+                    <div class="form-group mt-5">
+                      <label for="formGroupExampleInput"></label>
+                      <input type="text" class="form-control onesentence" id="formGroupExampleInput" placeholder="랜덤 단어를 넣어 한 문장으로 완성하세요.">
+                    </div>
+                    <div class="form-group mt-5">
+                      <label for="formGroupExampleInput2" class="explicatetext">위 문장은 무슨 의미인가요?</label>
+                      <textarea class="form-control" rows="5" name="content" id="content" placeholder="내용을 입력해 주세요" ></textarea>
+                    </div>
+                    <div class="col-sm-10 submitbtn">
+                        <button type="button" class="btn btn-primary submitb">완성</button>
+                    </div>
+                </form>    
+            </div>
+        </div>      
+    </section>
+    <section id="footer"> <!--footer-->
+        <div class="container-fluid">
+            <footer class="align-items-center fbox mt-5">
+              <img src="/static/img/footerImg.png" width="10%" class="footerImg">
+              <p class="footertext">© 2022 Ig-Web for IgNobel Prize</p>
+            </footer>
+          </div>
+    </section>
+    <script src="/static/js/home.js"></script>
+</body>
+</html>

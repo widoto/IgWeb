@@ -1,0 +1,405 @@
+/*수정 시작*/
+@import url('https://fonts.googleapis.com/css2?family=Mouse+Memoirs&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Mouse+Memoirs&family=Open+Sans&family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Mouse+Memoirs&family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Do+Hyeon&family=Rubik+Moonrocks&display=swap');
+@import url('https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css');
+@font-face {
+  font-family: 'SLEIGothicTTF';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2104@1.0/SLEIGothicTTF.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'YES24';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_13@1.0/YES24.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+    font-family: 'HallymGothic-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2204@1.0/HallymGothic-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+
+.navbar-nav {
+    --bs-nav-link-hover-color:#C0C53F !important;
+}
+
+.togglers{
+    background-color:white;
+    border-radius: 20 !important;
+}
+
+.navbackground{
+    background-color: #000000;
+}
+
+.menu{
+    font-size: 20px !important;
+    margin-right: 30px !important;
+    font-family: 'Open Sans', sans-serif !important;
+    font-weight: bold !important;
+    color:white !important; 
+}
+
+.menu:hover{
+    color:#C0C53F !important;
+}
+
+section {
+    
+    background-color: #0C090A;
+}
+
+#footer{
+    background-color: #101010; 
+}
+
+/*footer*/
+
+.footer{
+    background-color: #C0C53F;
+}
+
+.fbox{
+  background-color: #101010; 
+  width:100%;
+  text-align: center;
+}
+
+.footertext{
+  text-align: center;
+  padding-top: 70px;
+  padding-bottom: 100px;
+  color:white;
+  width:100%;
+}
+
+
+.footerImg{
+    border-radius: 8%;
+    margin-top: 8%;
+}
+
+/*수정 끝*/
+
+html {
+    background-color: #0C090A;
+    font-family: 'nanumsquare';
+
+}
+
+
+body {
+    background-color: #0C090A;
+}
+
+p, h3, h4, h6 {
+    color: white;
+    font-family: 'nanumsquare';
+}
+
+
+.main {
+    margin: 0 auto;
+    margin-top: 210px;
+    width: 65%;
+    padding-bottom: 40px;
+
+    /*
+    padding: 60px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 15px rgb(224, 224, 224);
+    */
+}
+
+
+*{margin:0; padding:0; }
+a{text-decoration:none;}
+.wrap{padding:10px;}
+
+
+.number {
+    margin-right: 10px;
+}
+.first-line {
+    height: 3px;
+    border: 0;
+    color: rgb(211, 211, 211);
+    background-color: #d4d4d4;
+    opacity: 1;
+    opacity: 0.5;
+}
+.inner {
+    margin-left: 20px;
+    margin-right: 25px;
+}
+
+.inner2 {
+    margin-left: 25px;
+    margin-right: 25px;
+}
+
+.main-title {
+    margin-top: 20px;
+    width: 100%;
+    padding-bottom: 20px;
+}
+
+.main-title h4 {
+    font-weight: bold;
+}
+
+.like {
+    float: right;
+    margin-top: 1px;
+}
+
+.like a {
+    text-decoration: none;
+    color: white;
+}
+
+.sub-title {
+    width: 100%;
+    padding-top: 27px;
+}
+
+.user-id {
+    display: inline;
+    float: left;
+    margin-bottom: 10px;
+    opacity: 0.6;
+}
+
+.second-line {
+    margin-bottom: 10px;
+    margin-top: 0;
+    width: 100%;
+    color: rgb(255, 255, 255);
+    background-color: rgb(217, 217, 217);
+    opacity: 0.5;
+}
+
+.part {
+    margin-right: 8px;
+    margin-left: 8px;
+    display: inline;
+    float: left;
+    color: rgb(231, 231, 231);
+    margin-bottom: 5px;
+    opacity: 0.6;
+}
+
+.date {
+    display: inline;
+    float: left;
+    margin-bottom: 5px;
+    opacity: 0.6;
+}
+
+.hits {
+    float: right;
+    opacity: 0.6;
+    width: 150px;
+    text-align: right;
+}
+
+.board {
+    margin-top: 20px;
+}
+
+.main-p {
+    font-size: medium;
+}
+
+.tag > a {
+    font-size: large;
+    text-decoration: none;
+    color: lightgray;
+    font-weight: bold;
+    font-family: 'nanumsquare';
+}
+
+.tag {
+    margin-top: 20px;
+}
+
+.comment-num {
+    display: inline;
+    color: white;
+    text-align: left;
+    font-size: 15px;
+    float: left;
+
+}
+
+
+/*modal 가운데 배치*/
+.modal-fullsize{
+    width: 50% !important;
+    height:70% !important;
+    margin: 0 auto;
+}
+
+.text-add {
+    margin: 5px 0 20px 0;
+}
+
+.comments {
+    margin: 0;
+    padding-bottom: 5px;
+    color: white;
+}
+
+.comment {
+    font-size: 14px;
+    padding: 0;
+    color: white;
+    text-align: left;
+    margin: 0;
+    border-bottom: 1px solid rgb(103, 103, 103);
+    padding-bottom: 8px;
+    padding-top: 8px;
+}
+.text-add {
+    width: 90%;
+    padding: 0;
+    height: 40px;
+    border-bottom: 1px solid gray;
+    background-color: #0C090A;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    color: white;
+    font-family: 'nanumsquare';
+    margin: 0 auto;
+    
+}
+
+.btn {
+    float: right;
+    margin-left: 15px;
+    font-family: 'nanumsquare';
+}
+
+.button-box {
+    height: 40px;
+}
+
+.modal {
+    margin-top: 30px;
+    color: rgb(63, 63, 63);
+}
+
+.form-label {
+    font-size: 13px;
+}
+
+.upload {
+
+    color: black;
+
+}
+
+/*추가*/
+
+/*수정됨*/
+.like-num {
+    float: right;
+    opacity: 0.6;
+    width: 150px;
+    text-align: right;
+}
+
+.like-button {
+    margin: 0;
+    padding: 0;
+}
+
+/*추가*/
+
+.like {
+    padding: 0;
+}
+
+.like-button-div {
+    padding: 0;
+}
+
+.like_hits {
+    float: right;
+    text-align: right;
+    height: 40px;
+    width: 150px;
+}
+
+.content {
+    padding: 20px;
+    background-color: rgb(241, 241, 241);
+    margin: 0 auto;
+    border-radius: 5px;
+}
+
+.sec {
+    background-color: #0C090A;
+    padding-top: 130px;
+}
+
+.sub {
+    width: 100%;
+}
+
+.comment-div {
+    width: 500px;
+    text-align: left;
+    height: 40px;
+}
+
+.commentdDiv {
+    width: 100%;
+    float: left;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+.comment-input-button {
+    background-color: #C0C53F;
+    padding: 5px 7px 5px 7px;
+    border-radius: 5px;
+    color: rgb(24, 24, 24);
+    font-weight: bold;
+    font-family: 'nanumsquare';
+    float: right;
+    width: 10%;
+}
+
+.comment-input-button:hover {
+    background-color: #797b2c;
+}
+
+
+.comment-delete input {
+    color: rgb(255, 255, 255);
+    opacity: 0.5;
+    background-color: #000000;
+    font-family: 'nanumsquare';
+}
+
+.comment-delete input:hover {
+    color: white;
+    opacity: 1;
+}
+.comment-delete-input {
+    float: right;
+    font-family: 'nanumsquare';
+}
+
+.comments-div {
+    width: 100%;
+    margin: 0 auto;
+}

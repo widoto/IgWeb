@@ -1,0 +1,378 @@
+/*수정 시작*/
+@import url('https://fonts.googleapis.com/css2?family=Mouse+Memoirs&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Mouse+Memoirs&family=Open+Sans&family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Mouse+Memoirs&family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Do+Hyeon&family=Rubik+Moonrocks&display=swap');
+@import url('https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css');
+@font-face {
+  font-family: 'SLEIGothicTTF';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2104@1.0/SLEIGothicTTF.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'YES24';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_13@1.0/YES24.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+    font-family: 'HallymGothic-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2204@1.0/HallymGothic-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+
+.navbar-nav {
+    --bs-nav-link-hover-color:#C0C53F !important;
+}
+
+.togglers{
+    background-color:white;
+    border-radius: 20 !important;
+}
+
+.navbackground{
+    background-color: #000000;
+}
+
+.menu{
+    font-size: 20px !important;
+    margin-right: 30px !important;
+    font-family: 'Open Sans', sans-serif !important;
+    font-weight: bold !important;
+    color:white !important; 
+}
+
+.menu:hover{
+    color:#C0C53F !important;
+}
+
+
+.main-section {
+    padding-top: 40px;
+    background-color: #0C090A;
+}
+
+#footer{
+    background-color: #101010; 
+}
+
+/*footer*/
+
+.footer{
+    background-color: #C0C53F;
+}
+
+.fbox{
+  background-color: #101010; 
+  width:100%;
+  text-align: center;
+}
+
+.footertext{
+  text-align: center;
+  padding-top: 70px;
+  padding-bottom: 100px;
+  color:white;
+  width:100%;
+}
+
+
+.footerImg{
+    border-radius: 8%;
+    margin-top: 8%;
+}
+
+/*수정 끝*/
+
+html {
+    background-color: #0C090A;
+    font-family: 'nanumsquare';
+}
+
+p, h3 {
+    color: white;
+    font-family: 'nanumsquare';
+}
+
+hr {
+    background-color: white;
+    color: white;
+    border: 0;
+    height: 1px;
+    opacity: 0.2;
+}
+
+.contents {
+    width: 65%;
+    margin: 0 auto;
+    background-color: #0C090A;
+    border-radius: 15px;
+    /*box-shadow: 1px 1px 15px rgb(82, 82, 82);*/
+    text-align: center;
+    padding-bottom: 60px;
+}
+
+.flex {
+    display: flex;
+}
+
+.main-video {
+    margin: 50px 50px 0 50px;
+    display: inline-block;
+}
+
+iframe {
+    margin: 0 auto;
+}
+
+.info {
+    padding: 0 50px 50px 50px;
+}
+/*수정*/
+.video-title {
+    margin-top: 15px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    text-align: left;
+    float: left;
+    font-family: 'nanumsquare';
+}
+/*수정*/
+.like-button {
+    float: right;
+    width: 100px;
+    margin-top : 20px;
+}
+
+
+/*수정*/
+.video-below {
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+.date {
+    text-align: left;
+    /*수정*/
+    width: 600px;
+}
+
+.like {
+    float: right;
+    text-align: right;
+}
+
+/*수정*/
+.like p {
+    opacity: 0.5;
+    color: white;
+    margin-right: 10px;
+    text-align: right;
+    display: inline;
+}
+
+.hits {
+    text-align: center;
+}
+
+.hits p {
+    color: white;
+    display: inline;
+    opacity: 0.5;
+    /* 수정 */
+    margin-right: 10px;
+}
+
+.date p {
+    display: inline;
+    margin-right: 10px;
+    opacity: 0.5;
+    
+}
+
+.user-func{
+    text-decoration: none;
+    color: #C0C53F;
+    font-weight: bold;
+    font-family: 'nanumsquare';
+}
+
+.user-func:hover {
+    color: #797b2c;
+}
+
+#box-name {
+    text-align: left;
+    margin-top: 40px;
+    margin-bottom: 0;
+}
+
+#sentence-box {
+    margin-top: 5px;
+    border-radius: 2px;
+    border: 1px solid rgb(75, 75, 75);
+}
+
+.sentence {
+    margin: 0;
+    font-size: 16px;
+    padding: 16px;
+    text-align: left;
+}
+
+.sentence a {
+    text-decoration-line: none;
+    color: white;
+}
+
+.writer {
+    margin-top: 40px;
+    text-align: left;
+}
+
+.writer p {
+    display: inline;
+    font-size: 20px;
+}
+/*수정*/
+#idea-line {
+    margin-top: 5px;
+    margin-bottom: 10px;
+    width: 400px;
+    float: left;
+    background-color: white;
+    color: white;
+    border: 0;
+    height: 1px;
+    opacity: 0.2;
+}
+
+.main-info {
+    margin-top: 20px;
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+}
+
+
+/*
+.text-add {
+    margin: 5px 0 20px 0;
+    width: 400px;
+}*/
+
+.comments {
+    margin: 0;
+    padding-bottom: 5px;
+    color: white;
+}
+
+.comment {
+    font-size: 14px;
+    padding: 0;
+    color: white;
+    text-align: left;
+    margin: 0 auto;
+    font-family: 'nanumsquare';
+    padding-bottom: 8px;
+    padding-top: 8px;
+}
+
+.text-add {
+    width: 90%;
+    padding: 0;
+    height: 40px;
+    border-bottom: 1px solid gray;
+    background-color: #0C090A;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    color: white;
+    font-family: 'nanumsquare';
+    margin: 0 auto;
+    
+}
+
+.comment-num {
+    display: inline;
+    color: white;
+    text-align: left;
+    font-size: 15px;
+    float: left;
+    font-family: 'nanumsquare';
+    margin-top: 15px;
+}
+
+/*수정 부분*/
+.contents {
+    margin-top: 100px;
+}
+
+.date {
+    width: 500px;
+}
+
+.date-num{
+    color: white;
+}
+.hits-num {
+    color: white;
+} 
+
+.comment-div {
+    width: 500px;
+    text-align: left;
+    height: 40px;
+}
+
+.commentdDiv {
+    width: 100%;
+    float: left;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+.comment-input-button {
+    background-color: #C0C53F;
+    padding: 5px 7px 5px 7px;
+    border-radius: 5px;
+    color: rgb(24, 24, 24);
+    font-weight: bold;
+    font-family: 'nanumsquare';
+    float: right;
+    width: 10%;
+}
+
+.comment-input-button:hover {
+    background-color: #797b2c;
+}
+
+
+.comment-delete input {
+    color: rgb(255, 255, 255);
+    opacity: 0.5;
+    background-color: #000000;
+    font-family: 'nanumsquare';
+}
+
+.comment-delete input:hover {
+    color: white;
+    opacity: 1;
+}
+.comment-delete-input {
+    float: right;
+    font-family: 'nanumsquare';
+}
+
+.comments-div {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.video-size {
+    margin: 0 auto;
+}

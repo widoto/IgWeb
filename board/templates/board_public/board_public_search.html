@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>일반인 게시판 - 이그웹</title>
+    <link rel="stylesheet" href="/static/css/forPerson.css">
+    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+    <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+    <link rel="icon" sizes="192x192" href="/static/img/favicon.png">
+    <nav class="navbar navbar-expand-sm fixed-top navbackground navmargin">    
+        <div class="container-fluid"> 
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">        
+                <span class="navbar-toggler-icon togglers" ></span>    
+            </button>     
+            <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">        
+                <ul class="navbar-nav mt-2 menugroup">
+                    {% if request.user.is_authenticated %}
+                    <li class="nav-item mr-3">            
+                        <a class="nav-link menu randommenu" href="{% url 'logout' %}" data-mid="0">로그아웃</a>        
+                    </li>
+                    {% else %}
+                    <li class="nav-item mr-3">            
+                        <a class="nav-link menu randommenu" href="{% url 'rwordpage' %}" data-mid="0">로그인</a>        
+                    </li>
+                    {% endif %}          
+                    <li class="nav-item mr-3" data-mid="0">            
+                        <a class="nav-link menu randommenu" href="{% url 'rwordpage' %}" data-mid="0">랜덤 단어 생성하기</a>        
+                    </li>        
+                    <li class="nav-item mr-3" data-mid="1">            
+                        <a class="nav-link menu" href="{% url 'rwordboard' %}" data-mid="1">문장 공유하기</a>        
+                    </li>        
+                    <li class="nav-item mr-3" data-mid="2">            
+                        <a class="nav-link menu" href="{% url 'board:board_public_list' %}" data-mid="2">일반인 게시판</a>        
+                    </li>        
+                    <li class="nav-item mr-3">            
+                        <a class="nav-link menu" href="{% url 'board:board_science_list' %}" data-mid="3">과학자 게시판</a>        
+                    </li>        
+                </ul>    
+            </div>    
+        </div>
+    </nav>
+    <style>
+        /*여기서 부터 수정*/
+    form, input, select, option {
+        font-family: 'nanumsquare';
+    }
+
+    .option-forms {
+        margin-bottom: 20px;
+        width: 1380px;
+        margin: 0 auto;
+        margin-bottom: 30px;
+        margin-top: 50px;
+    }
+
+    .search-form select{
+        background-color: #000000;
+        color: rgb(207, 207, 207);
+        border: 1px solid rgb(205, 205, 205);
+        padding: 6px 5px;
+    }
+
+    .form-select {
+        text-indent: 5px;
+    }
+
+    .option {
+        color: rgb(207, 207, 207);
+        background-color: #000000;
+        padding-top: 5px;
+    }
+
+    .option:hover{
+        background-color: #dbdbdb;
+    }
+
+    .search-input {
+        background-color: #000000;
+        color: rgb(207, 207, 207);
+        border-bottom: 1px solid rgb(205, 205, 205);
+        border-top: 0px;
+        border-right: 0px;
+        border-left: 0px;
+        padding: 6px 7px;
+        margin: 0 5px;
+        width: 200px;
+    }
+
+    .search-input:hover {
+        border: 1px solid white;
+        border-radius: 3px;
+    }
+
+    .search-form button{
+        background-color: #C0C53F;
+        padding: 5px 7px 5px 7px;
+        border-radius: 5px;
+        color: rgb(24, 24, 24);
+        font-weight: bold;
+    }
+    .search-form button:hover {
+        background-color: #c1c53fb9;
+    }
+
+    .sort-form {
+        float: right;
+    }
+
+    .sort-select {
+        background-color: #000000 !important;
+        color: rgb(207, 207, 207) !important;
+        border: 1px solid rgb(205, 205, 205);
+
+    }
+
+    .sort-form button {
+        background-color: #C0C53F;
+        padding: 5px 7px 5px 7px;
+        border-radius: 5px;
+        color: rgb(24, 24, 24);
+        font-weight: bold;
+        margin-left: 5px;
+    }
+
+    .sort-form button:hover {
+        background-color: #c1c53fb9;
+    }
+    </style>
+</head>
+<body>
+    <section>
+        <div class="d-block" style="width: 100%;">
+            <h2 class="ignovel d-inline" style="text-align: center; margin-left: 42%;" data-content="일반인 게시판" id="for-person">일반인 게시판</h2>
+        </div>
+        <div class="option-forms">
+            <!--검색 form-->
+            <form class="d-inline search-form" action="{% url 'board:board_public_search' %}" method="GET"> 
+                <!--{% csrf_token %}-->
+                <div class="d-inline">
+                    <div class="d-inline">
+                        <select class="form-select d-inline" aria-label="Default select example" style="width: 6em;" name="type">
+                            <option class="option" selected value="all">전체</option>
+                            <option class="option" value="title_contents">제목+내용</option>
+                            <option class="option" value="title">제목</option>
+                            <option class="option" value="contents">내용</option>
+                            <option class="option" value="writer">작성자</option>
+                            <option class="option" value="sentence">문장</option>
+                        </select>
+                        <input class="search-input" type="search" placeholder="Search" aria-label="Search" name="q" value="{{q}}">
+                        <button input type="submit">검색</button>
+                    </div>
+                </div>
+                <div class="d-inline sort-form">
+                    <div class="d-inline">
+                        <select class="form-select sort-select d-inline" style="width: 7em;" name="sort" id="sort">
+                            <option value="recently" id="recently">최신순</option>
+                            <option value="likes" id="likes">좋아요순</option>
+                            <option value="hits" id="hits">조회수순</option>
+                        </select>
+                        <button class="d-inline" type="submit" value="">정렬</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        {% if not boards%}
+            <br>
+            <p style="color: white; margin-left: 50px;">검색 결과가 없습니다.</p>
+        {% else %}
+        <div class="grid">  
+            <!--div-->
+            {% for board in boards %}
+            {% if board %}
+            <div class="grid-sizer"></div>  
+            <div class="grid-item">
+                <a href="/board/public/detail/{{ board.id }}">
+                    {% if board.image %}
+                    <img src="{{ board.image.url }}" />
+                    {% endif %}                
+                    <p class="title">{{ board.title }}</p>
+                    <p class="title">좋아요 : {{ board.total_likes }}</p>
+                    <p class="title">조회수 : {{ board.hits }}</p>    
+                </a>
+            </div>
+            {% endif %}
+            {% endfor %}  
+        </div>
+        <hr/>
+        <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-center">
+            {% if boards.has_previous %}
+            <li class="page-item">
+                <a class="page-link" href="?page=1&sort={{sort}}&q={{q}}&type={{type}}" aria-label="First">
+                <span aria-hidden="true">&laquo;</span>
+                </a>
+            </li>
+            <li class="page-item">
+                <a class="page-link" href="?page={{ boards.previous_page_number }}&sort={{sort}}&q={{q}}&type={{type}}" aria-label="Previous">
+                <span aria-hidden="true">&lt;</span>
+                </a>
+            </li>
+            {% endif %}
+            {% for page_number in boards.paginator.page_range %}
+            {% if page_number == boards.number %}
+            <li class="page-item active" aria-current="page"><a class="page-link" href="?&page={{ page_number }}">{{ page_number }}</a></li>
+            {% else %}
+            <li class="page-item"><a class="page-link" href="?&page={{ page_number }}">{{ page_number }}</a></li>
+            {% endif %}
+            {% endfor %}
+            {% if boards.has_next %}
+            <li class="page-item">
+                <a class="page-link" href="?page={{ boards.next_page_number }}&sort={{sort}}&q={{q}}&type={{type}}" aria-label="Next">
+                <span aria-hidden="true">&gt;</span>
+                </a>
+            </li>
+            <li class="page-item">
+                <a class="page-link" href="?page={{ boards.paginator.num_pages }}&sort={{sort}}&q={{q}}&type={{type}}" aria-label="Last">
+                <span aria-hidden="true">&raquo;</span>
+                </a>
+            </li>
+            {% endif %}
+            </ul>
+        </nav> 
+        {% endif %}
+    </section>
+    <section id="footer"> <!--footer-->
+        <div class="container-fluid">
+            <footer class="align-items-center fbox">
+              <img src="/static/img/footerImg.png" width="10%" class="footerImg">
+              <p class="footertext">© 2022 Ig-Web for IgNobel Prize</p>
+            </footer>
+          </div>
+    </section>
+</body>
+<script>
+    var msnry = new Masonry( '.grid', {  
+        itemSelector: '.grid-item',  
+        // columnWidth: 200  
+        columnWidth: '.grid-sizer',  
+        percentPosition: true,  
+        gutter : 15
+    });
+
+    imagesLoaded( '.grid' ).on( 'progress', function() {  
+        msnry.layout();
+    });
+
+    const area=document.getElementById('grid-item');
+    
+</script>
+</html>

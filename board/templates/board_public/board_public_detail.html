@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>일반인 상세 페이지 - 이그웹</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/static/css/videoDetail.css">
+    <link rel="icon" sizes="192x192" href="/static/img/favicon.png">
+    <nav class="navbar navbar-expand-sm fixed-top navbackground navmargin">    
+        <div class="container-fluid"> 
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">        
+                <span class="navbar-toggler-icon togglers" ></span>    
+            </button>     
+            <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">        
+                <ul class="navbar-nav mt-2 menugroup">
+                  {% if request.user.is_authenticated %}
+                  <li class="nav-item mr-3">            
+                      <a class="nav-link menu randommenu" href="{% url 'logout' %}" data-mid="0">로그아웃</a>        
+                  </li>
+                  {% else %}
+                  <li class="nav-item mr-3">            
+                      <a class="nav-link menu randommenu" href="{% url 'rwordpage' %}" data-mid="0">로그인</a>        
+                  </li>
+                  {% endif %}           
+                    <li class="nav-item mr-3" data-mid="0">            
+                        <a class="nav-link menu randommenu" href="{% url 'rwordpage' %}" data-mid="0">랜덤 단어 생성하기</a>        
+                    </li>        
+                    <li class="nav-item mr-3" data-mid="1">            
+                        <a class="nav-link menu" href="{% url 'rwordboard' %}" data-mid="1">문장 공유하기</a>        
+                    </li>        
+                    <li class="nav-item mr-3" data-mid="2">            
+                        <a class="nav-link menu" href="{% url 'board:board_public_list' %}" data-mid="2">일반인 게시판</a>        
+                    </li>        
+                    <li class="nav-item mr-3">            
+                        <a class="nav-link menu" href="{% url 'board:board_science_list' %}" data-mid="3">과학자 게시판</a>        
+                    </li>        
+                </ul>    
+            </div>    
+        </div>
+    </nav>
+    <style>
+      .notice:hover {
+        color: #f9ffaa;
+        text-decoration: underline;
+            
+      }
+      .notice {
+        color: #C0C53F;
+        text-decoration: none;
+      }
+    </style>
+</head>
+<body>
+    <section class="main-section">
+        <div class="contents">
+            <!--영상 (560:315 비율) width="1008" height="567"-->
+            <!--<div class="main-video">  
+                <iframe width="1008" height="567" src="https://www.youtube.com/embed/xTY0SlyVfCQ?autoplay=1&mute=1&controls=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div> --> 
+          <div class="info">
+            <div class="row">
+              <h3 class="video-title col-10">{{ board.title }}</h3>
+              <!--좋아요 버튼-->
+              <div class="like-button-div col-2">
+                {% if request.user.is_authenticated %}
+                <form class="d-inline like-button" action="{% url 'board:likes' board.pk %}" method='POST'>
+                  {% csrf_token %}
+                  {% if user in board.like_users.all %}
+                    <button class="btn btn-link text-danger">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-suit-heart-fill" viewBox="0 0 16 16">
+                        <path d="M4 1c2.21 0 4 1.755 4 3.92C8 2.755 9.79 1 12 1s4 1.755 4 3.92c0 3.263-3.234 4.414-7.608 9.608a.513.513 0 0 1-.784 0C3.234 9.334 0 8.183 0 4.92 0 2.755 1.79 1 4 1z"/>
+                      </svg>
+                    </button>
+                  {% else %}
+                    <button class="btn btn-link text-danger">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-suit-heart" viewBox="0 0 16 16">
+                        <path d="m8 6.236-.894-1.789c-.222-.443-.607-1.08-1.152-1.595C5.418 2.345 4.776 2 4 2 2.324 2 1 3.326 1 4.92c0 1.211.554 2.066 1.868 3.37.337.334.721.695 1.146 1.093C5.122 10.423 6.5 11.717 8 13.447c1.5-1.73 2.878-3.024 3.986-4.064.425-.398.81-.76 1.146-1.093C14.446 6.986 15 6.131 15 4.92 15 3.326 13.676 2 12 2c-.777 0-1.418.345-1.954.852-.545.515-.93 1.152-1.152 1.595L8 6.236zm.392 8.292a.513.513 0 0 1-.784 0c-1.601-1.902-3.05-3.262-4.243-4.381C1.3 8.208 0 6.989 0 4.92 0 2.755 1.79 1 4 1c1.6 0 2.719 1.05 3.404 2.008.26.365.458.716.596.992a7.55 7.55 0 0 1 .596-.992C9.281 2.049 10.4 1 12 1c2.21 0 4 1.755 4 3.92 0 2.069-1.3 3.288-3.365 5.227-1.193 1.12-2.642 2.48-4.243 4.38z"/>
+                      </svg>
+                    </button>
+                  {% endif %}
+                </form>
+                {% endif %}
+              </div>
+            </div>
+            <div class="video-below">
+              <div class="row">
+                <div class="date col">
+                  <p class="d-inline">게시일</p>
+                  <p class="d-inline date-num text-light">{{ board.write_dttm }}</p>
+                </div>
+                <div class="hits col">
+                    <p class="d-inline">조회수</p>
+                    <p class="d-inline hits-num text-light">{{ board.hits }}</p>
+                </div>
+                {% if messages %}
+                <div>
+                    {% for message in messages %}
+                    <a href="/accounts/login">{{ message.message }}</a>
+                    {% endfor %}
+                </div>
+                {% endif %}
+                <div class="like col">
+                    <p>좋아요</p>
+                    <p class="text-light">{{ like_num }}</p>
+                </div>
+              </div>              
+            </div>
+            <hr>
+            <div class="float-end">
+              {% if user == board.writer %}
+              <a class="smaller-gray user-func d-inline" href="/board/public/detail/{{ board.id }}/modify/">수정</a>
+              <p class="d-inline">|</p>
+              <a class="smaller-gray user-func d-inline" href="/board/public/detail/{{ board.id }}/delete/">삭제</a>
+              {% endif %}
+            </div>
+            <p id="box-name">활용한 문장 : </p>
+            <div id="sentence-box">
+                <h3 class="sentence"><a href="#">{{ board.sentence }}</a></h3>
+            </div>
+            <div class="writer">
+                <p>{{ board.writer }}</p>
+                <p>님의 아이디어</p>
+            </div>
+            <hr id="idea-line d-blcok">
+            <div class="main-info">
+                <p class="video-size">
+                {{ board.contents|safe }}  
+                </p>
+            </div>
+            <hr class="first-line">
+            <!--댓글창-->
+            <div style="padding-bottom: 20px;">
+              {% if comments %}
+              <div class="d-block comment-div" style="float: left;">
+                  <h5 class="comment-num"><strong>댓글&nbsp;</strong></h5>
+                  <h5 class="comment-num"><strong>{{ comments|length }} 개</strong></h5>
+              </div>
+              {% endif %}
+              <div class="d-blcok" style="float: left;">
+              {% if not comments %}
+                <h5 class="comment-num"><strong>댓글&nbsp;</strong></h5>
+                <h5 class="comment-num"><strong>0 개</strong></h5>
+              {% endif %}
+              </div>
+              <!-- 댓글생성 -->
+              {% if request.user.is_authenticated %}
+              <div class="d-block commentdDiv">
+                <form class="text-add" action="{% url 'board:comments_create' board.pk %}" method="POST">
+                  {% csrf_token %}
+                  {{ comment_form.content }}
+                  <input class="comment-input-button" type="submit" value="댓글 입력">
+                </form>
+              </div>                
+              {% else %}
+              <div class="d-block" style="float: left; margin: 10px; padding-top: 50px; padding-bottom: 20px; margin-left: -55px;">
+                <a class="notice" style="text-align: left; font-family:'nanumsquare';" href="/">댓글을 작성하려면 로그인하세요.</a>
+              </div>
+              {% endif %}    
+              <!--댓글 리스트-->
+              {% for comment in comments %}
+              <div class="row comments-div">
+                <div class="comment col-10">
+                  <b>{{ comment.user }}&nbsp;&nbsp;&nbsp;</b>{{ comment.content }}
+                </div>
+              <!--댓글 삭제 버튼-->
+                {% if user == comment.user %}
+                <form class="col-2 comment-delete" action="{% url 'board:comments_delete' board.pk comment.pk %}" method="POST" class="d-inline">
+                  {% csrf_token %}
+                  <input class="comment-delete-input" type="submit" value="삭제">
+                </form>
+                {% endif %}                                           
+              </div>                                                                                                                                                                                                                                                                                            
+              {% endfor %}        
+                  
+            </div>
+          </div>
+        </div>
+        
+    </section>
+    <section id="footer"> <!--footer-->
+        <div class="container-fluid">
+            <footer class="align-items-center fbox">
+              <img src="/static/img/footerImg.png" width="10%" class="footerImg">
+              <p class="footertext">© 2022 Ig-Web for IgNobel Prize</p>
+            </footer>
+          </div>
+    </section>
+</body>
+</html>

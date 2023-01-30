@@ -1,0 +1,231 @@
+/*수정 시작*/
+@import url('https://fonts.googleapis.com/css2?family=Mouse+Memoirs&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Mouse+Memoirs&family=Open+Sans&family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Mouse+Memoirs&family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Do+Hyeon&family=Rubik+Moonrocks&display=swap');
+@import url('https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css');
+@font-face {
+  font-family: 'SLEIGothicTTF';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2104@1.0/SLEIGothicTTF.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'YES24';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_13@1.0/YES24.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+    font-family: 'HallymGothic-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2204@1.0/HallymGothic-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+
+.navbar-nav {
+    --bs-nav-link-hover-color:#C0C53F !important;
+}
+
+.togglers{
+    background-color:white;
+    border-radius: 20 !important;
+}
+
+.navbackground{
+    background-color: #000000;
+}
+
+.menu{
+    font-size: 20px !important;
+    margin-right: 30px !important;
+    font-family: 'Open Sans', sans-serif !important;
+    font-weight: bold !important;
+    color:white !important; 
+}
+
+.menu:hover{
+    color:#C0C53F !important;
+}
+
+section {
+    background-color: #0C090A;
+}
+
+#footer{
+    background-color: #101010; 
+}
+
+/*footer*/
+
+.footer{
+    background-color: #C0C53F;
+}
+
+.fbox{
+  background-color: #101010; 
+  width:100%;
+  text-align: center;
+}
+
+.footertext{
+  text-align: center;
+  padding-top: 70px;
+  padding-bottom: 100px;
+  color:white;
+  width:100%;
+}
+
+
+.footerImg{
+    border-radius: 8%;
+    margin-top: 8%;
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 0rem !important;
+}
+
+/*수정 끝*/
+
+html {
+    background-color: #0C090A;
+}
+
+
+p, h3, h4 {
+    color: white;
+    font-family: 'nanumsquare';
+}
+
+hr {
+    background-color:rgb(222, 222, 222);
+    opacity: 0.5;
+    border: 0;
+    height: 2px;
+}
+
+.all {
+    margin-top: 160px;
+}
+
+.main {
+    margin: 0 auto;
+    margin-top: 90px;
+    width: 65%;
+}
+
+
+*{margin:0; padding:0;}
+a{text-decoration:none;}
+
+.bold-line {
+    border: 0;
+    height: 4px;
+    background-color: rgb(222, 222, 222);
+    opacity: 0.5;
+}
+.btn > a {
+    color: black;
+    text-decoration:none;
+}
+
+.btn > a > strong {
+    font-family: 'nanumsquare';
+}
+
+.btn > a:hover {
+    color: white;
+}
+
+#title{
+    font-weight: bold;
+    margin-bottom: 35px;
+    padding-top: 30px;
+}
+
+
+.table-tag {
+    margin: 30px 0;
+    border-collapse: separate;
+    border-spacing: 0 12px;
+    width: 55%;
+}
+
+.table-div {
+    margin-left: 20px;
+}
+
+th {
+    color: rgb(149, 149, 149);
+    font-weight: normal;
+    font-family: 'nanumsquare';
+}
+
+td {
+    color:white;
+    font-family: 'nanumsquare';
+}
+
+#title2 {
+    margin-top: 50px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.main-write {
+    margin: 30px 20px 0 20px;
+    padding-bottom: 40px;
+}
+
+/*수정*/
+.user-func{
+    text-decoration: none;
+    color: #C0C53F;
+    font-weight: bold;
+    font-family: 'nanumsquare';
+    float: left;
+}
+
+.user-func:hover {
+    color: #797b2c;
+
+}
+
+.button-hr {
+    float: right;
+    margin: 0 10px;
+}
+
+.like-button {
+    float: right;
+    width: 100px;
+    padding-left: 37px;
+    padding-top: 5px;
+}
+
+.like-button-div {
+    float: right;
+    padding: 20px;
+}
+
+.like-num {
+    font-weight: "bold";
+    opacity: 0.5;
+}
+
+.hits-num {
+    font-weight: "bold";
+    opacity: 0.5;
+}
+
+.like-name {
+    opacity: 0.5;
+}
+
+.hit-name {
+    opacity: 0.5;
+}

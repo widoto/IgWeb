@@ -1,0 +1,194 @@
+@import "animation.css"; 
+@font-face {
+    font-family: 'TmonMonsori';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/TmonMonsori.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/*수정 시작*/
+@import url('https://fonts.googleapis.com/css2?family=Mouse+Memoirs&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Mouse+Memoirs&family=Open+Sans&family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Mouse+Memoirs&family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Do+Hyeon&family=Rubik+Moonrocks&display=swap');
+@import url('https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css');
+@font-face {
+  font-family: 'SLEIGothicTTF';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2104@1.0/SLEIGothicTTF.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'YES24';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_13@1.0/YES24.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+    font-family: 'HallymGothic-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2204@1.0/HallymGothic-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+
+.navbar-nav {
+    --bs-nav-link-hover-color:#C0C53F !important;
+}
+
+.togglers{
+    background-color:white;
+    border-radius: 20 !important;
+}
+
+.navbackground{
+    background-color: #000000;
+}
+
+.menu{
+    font-size: 20px !important;
+    margin-right: 30px !important;
+    font-family: 'Open Sans', sans-serif !important;
+    font-weight: bold !important;
+    color:white !important; 
+}
+
+.menu:hover{
+    color:#C0C53F !important;
+}
+
+section {
+    padding-top: 130px;
+    padding-bottom: 40px;
+    background-color: #0C090A;
+}
+
+#footer{
+    background-color: #101010; 
+}
+
+/*footer*/
+
+.footer{
+    background-color: #C0C53F;
+}
+
+.fbox{
+  background-color: #101010; 
+  width:100%;
+  text-align: center;
+}
+
+.footertext{
+  text-align: center;
+  padding-top: 70px;
+  padding-bottom: 100px;
+  color:white;
+  width:100%;
+}
+
+
+.footerImg{
+    border-radius: 8%;
+    margin-top: 8%;
+}
+
+/*수정 끝*/
+
+html {
+    background-color: #0C090A;
+}
+
+#for-person {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 30px;
+    margin-top: 100px;
+    color: white;
+    font-family: 'TmonMonsori', sans-serif;
+}
+.grid { 
+    margin: 0 auto; 
+    width: 1380px;
+}
+.grid-sizer, .grid-item { 
+    width: 260px; 
+}
+/* .grid-sizer, .grid-item { width: 200px; } */
+.grid-item { 
+    border: none; 
+    margin-bottom:15px; 
+    border-radius: 16px; 
+    overflow:hidden;
+    position: relative; 
+}
+.grid-item img {
+    display: block; 
+    min-width:100%; 
+    max-width: 100%; 
+    opacity: 1.0;
+    border-radius: 16px;
+}
+
+.grid-item img:hover {
+    opacity: 0.5;
+}
+/*
+#firstID {
+    position: absolute;
+    display: none;
+}
+*/
+
+.title {
+    margin: 5px 10px 0 10px;
+    color: white;
+    width: 240px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    font-family: 'nanumsquare';
+}
+
+.grid-item a {
+    text-decoration: none;
+}
+
+.ignovel{
+    position: relative;
+    font-family: 'Anton', sans-serif;
+    font-size: 45px;
+    color: #fff;
+    text-transform: uppercase;
+    overflow: hidden;
+}
+
+.ignovel:before{
+
+    content: attr(data-content);
+    position: absolute;
+    left: -2px;
+    text-shadow: 3px 0 #f00;
+    top: 0;
+    color: #fff;
+    overflow: hidden;
+    clip: rect(0, 900px, 0, 0);
+    animation: noise-anim-2 3s infinite linear alternate-reverse;
+
+}
+
+.ignovel:after{
+
+    content: attr(data-content);
+    position: absolute;
+    left: -2px;
+    text-shadow: -3px 0 #C0C53F;
+    top: 0;
+    color: #fff;
+    overflow: hidden;
+    clip: rect(0, 900px, 0, 0);
+    animation: noise-anim-2 3s infinite linear alternate-reverse;
+}

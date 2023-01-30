@@ -1,0 +1,558 @@
+@import "animation.css";
+@import url('https://fonts.googleapis.com/css2?family=Mouse+Memoirs&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Mouse+Memoirs&family=Open+Sans&family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Mouse+Memoirs&family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Do+Hyeon&family=Rubik+Moonrocks&display=swap');
+@import url('https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css');
+@font-face {
+  font-family: 'SLEIGothicTTF';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2104@1.0/SLEIGothicTTF.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'YES24';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_13@1.0/YES24.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+    font-family: 'HallymGothic-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2204@1.0/HallymGothic-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'InfinitySans-RegularA1';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/InfinitySans-RegularA1.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/*navbar*/
+.navbar-nav {
+    --bs-nav-link-hover-color:#C0C53F;
+}
+
+.togglers{
+    background-color:white;
+    border-radius: 20;
+}
+
+.navbackground{
+    background-color: #000000;
+}
+
+.logotitle{
+    font-family: 'Mouse Memoirs', sans-serif;
+    font-size: 50px;
+    margin-left: 20px;
+    padding: -10 -10 -10 -10;
+    color:#ffffff;
+}
+
+.menu{
+    font-size: 20px;
+    margin-right: 30px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+    color:white; 
+}
+
+/*for video*/
+body {
+    padding: 0px;
+    margin: 0px;
+    height:100%;
+    background-color: #0C090A;
+}
+
+html{
+    height:100%;
+}
+
+.bg {
+    width: 100%;
+    overflow: hidden;
+    margin: 0px auto;
+    position: relative;
+    background-color: #000000;
+}
+
+video {
+    width: 75%;
+}
+
+.videobg.relative{
+    position:relative;
+    margin-right: 100px;
+}
+
+.text {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.text p {
+    text-align: center;
+    font-size: 25px;
+    color: #ffffff;
+}
+
+.maintitle{
+    position: absolute;
+    font-family: 'Anton', sans-serif;
+    color: #C0C53F;
+    top : 50px;
+    right: 100px;
+    margin-right: 150px;
+    font-size: 15vw;
+}
+
+/*modal for login, sign up*/
+input[type=password] {
+    font-family: 'GmarketSansMedium';
+}
+
+input[type=password]::placeholder {
+    font-family: 'nanumsquare';
+}
+
+.logintext{
+  font-family: 'nanumsquare';
+}
+
+.alertb1{
+    height: 35px;
+    text-align: center;
+    margin:0px;
+    padding-top: 5px;
+    display:block;
+    background-color: #fac6c6;
+    background-image: url("./../img/alert.png");
+    font-family: 'nanumsquare';
+    font-weight: bold;
+    background-repeat: no-repeat;
+    background-position: 5% 45%;
+    background-size: 10%;
+}
+
+.modal{
+    backdrop-filter: blur(5px);
+}
+
+.modal-title{
+    font-family: 'Anton', sans-serif;
+    font-size:1.8em;
+}
+
+.btn-success {
+    --bs-btn-color: #fff;
+    --bs-btn-bg: #C0C53F;
+    --bs-btn-border-color: #C0C53F;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #A9C23F;
+    --bs-btn-hover-border-color: #A9C23F;
+    --bs-btn-focus-shadow-rgb: 60,153,110;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: #A9C23F;
+    --bs-btn-active-border-color: #A9C23F;
+    --bs-btn-active-shadow: inset 0 3px 5px #92a82f;
+    --bs-btn-disabled-color: #fff;
+    --bs-btn-disabled-bg: #C0C53F;
+    --bs-btn-disabled-border-color: #C0C53F;
+}
+
+/*for each section*/
+#main{
+    margin-top: 5%;
+}
+
+#intro{
+    width:70% !important;
+}
+
+#random{
+    text-align: center;
+    margin-top: 70px;
+    margin-bottom:70px;
+    height: 100px;
+}
+
+#sentence{
+    display: block;
+    margin-top: 200px;
+    margin-left: 150px;
+    margin-right: 150px;
+    width:65%;
+}
+
+#footer{
+  background-color: #101010; 
+}
+
+#level{
+  background-color: #C0C53F;
+  text-align: center;
+  width: 65%;
+  border-radius: 20px;
+}
+
+/*section intro*/
+/*title logo*/
+.text-flicker-in-glow {
+	-webkit-animation: text-flicker-in-glow 8s linear infinite both;
+	        animation: text-flicker-in-glow 8s linear infinite both;
+}
+
+.ignovelcontent{
+  color:white;
+  font-family: 'nanumsquare';
+  font-size: 17px;
+  opacity: 0;
+}
+
+.ltt{
+  color:#C0C53F;
+  font-family: 'YES24';
+  font-size: 28px;
+}
+
+.separateline{
+  color:white;
+  width:150%;
+}
+
+.goat{
+  margin-top:20px;
+  border-radius: 3%;
+  width:100%;
+}
+
+
+/*level and sentence section*/
+.thinking{
+  width:40%;
+  float: right;
+}
+
+.ment{
+  color:black;
+  text-align: center;
+  font-family: 'nanumsquare';
+  font-size: 1.1em;
+}
+
+.radiobtn
+{
+    text-align: center;
+    vertical-align: middle;
+    font-size: 23px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+    border-width: none;
+}
+
+.mentdiffi
+{
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.mentdiffititle
+{
+    font-size: 3em;
+    font-family: 'Anton', sans-serif;
+    color:black;
+
+}
+
+.wordspan{
+    font-family: 'InfinitySans-RegularA1';
+    width:250px;
+    font-size:4vw;
+    color:black;
+    margin-left: 20%;
+    margin-bottom:0px;
+}
+
+.lwords{
+    display: none;
+}
+
+
+.makewords{
+    width:150px;
+}
+
+.submitbtn
+{
+    margin-top: 10px;
+    margin-bottom: 100px;
+}
+
+.submitb{
+    width:100px;
+    color:black;
+    background-color: #C0C53F;
+    border-color: #C0C53F;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'nanumsquare';
+}
+
+.contentbox{
+    background-color: #0C090A;
+}
+
+.tv{
+    width:80% !important ;
+    right: -20%;
+    margin-top: 260px;
+}
+
+/*section fade in css*/
+.fade-in-box {
+    animation: fadein 3s;
+    -moz-animation: fadein 3s; /* Firefox */
+    -webkit-animation: fadein 3s; /* Safari and Chrome */
+    -o-animation: fadein 3s; /* Opera */
+    animation-fill-mode: forwards;
+}
+
+/*title*/
+.ignovel{
+    position: relative;
+    font-family: 'Anton', sans-serif;
+    font-size: 45px;
+    color: #fff;
+    text-transform: uppercase;
+    overflow: hidden;
+}
+  
+.ignovel:before{
+
+    content: attr(data-content);
+    position: absolute;
+    left: -2px;
+    text-shadow: 3px 0 #f00;
+    top: 0;
+    color: #fff;
+    overflow: hidden;
+    clip: rect(0, 900px, 0, 0);
+    animation: noise-anim-2 3s infinite linear alternate-reverse;
+
+}
+    
+.ignovel:after{
+
+    content: attr(data-content);
+    position: absolute;
+    left: -2px;
+    text-shadow: -3px 0 #C0C53F;
+    top: 0;
+    color: #fff;
+    overflow: hidden;
+    clip: rect(0, 900px, 0, 0);
+    animation: noise-anim-2 3s infinite linear alternate-reverse;
+}
+
+.difficulty{
+    position: relative;
+    font-family: 'Anton', sans-serif;
+    font-size: 3vw;
+    color: #000;
+    text-transform: uppercase;
+    overflow: hidden;
+}
+
+.difficulty:before{
+
+    content: attr(data-content);
+    position: absolute;
+    left: -2px;
+    text-shadow: 3px 0 #f00;
+    top: 0;
+    color: #000;
+    overflow: hidden;
+    clip: rect(0, 900px, 0, 0);
+    animation: noise-anim-2 3s infinite linear alternate-reverse;
+}
+    
+.difficulty:after{
+
+    content: attr(data-content);
+    position: absolute;
+    left: -2px;
+    text-shadow: -3px 0 #C0C53F;
+    top: 0;
+    color: #000;
+    overflow: hidden;
+    clip: rect(0, 900px, 0, 0);
+    animation: noise-anim-2 3s infinite linear alternate-reverse;
+}
+    
+.fadeIn{
+    animation: fadeIn;
+    animation-duration: 0.5s;
+}
+
+.fadeOut{
+    animation: fadeOut;
+    animation-duration: 0.5s;
+}
+
+/*알람 밸*/
+.icon-animated-bell{
+    display:inline-block;
+    -moz-animation:ringing 2s 9999 ease 1s;
+    -webkit-animation:ringing 2s 9999 ease 1s;
+    -o-animation:ringing 2s 9999 ease 1s;
+    -ms-animation:ringing 2s 9999 ease 1s;
+    animation:ringing 2s 9999 ease 1s;
+    -moz-transform-origin:50% 0;
+    -webkit-transform-origin:50% 0;
+    -o-transform-origin:50% 0;
+    -ms-transform-origin:50% 0;
+    transform-origin:50% 0
+}
+
+/*footer*/
+
+.footer{
+    background-color: #C0C53F;
+}
+
+.fbox{
+  background-color: #101010; 
+  width:100%;
+  text-align: center;
+}
+
+.footertext{
+  text-align: center;
+  padding-top: 70px;
+  padding-bottom: 100px;
+  color:white;
+  width:100%;
+}
+
+.btn-check:active+.btn, .btn-check:checked+.btn, .btn.active, .btn.show, .btn:active {
+    color: var(--bs-btn-active-color);
+    background-color: black;
+}
+
+.btn-outline-primary {
+    --bs-btn-color: black;
+    --bs-btn-border-color: black;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: black;
+    --bs-btn-hover-border-color: #C0C53F;
+    --bs-btn-focus-shadow-rgb: 13,110,253;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: black;
+    --bs-btn-active-border-color: #C0C53F;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #C0C53F;
+    --bs-btn-disabled-bg: transparent;
+    --bs-btn-disabled-border-color: #C0C53F;
+    --bs-gradient: none;
+}
+
+
+.focus-in-expand {
+	-webkit-animation: focus-in-expand 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: focus-in-expand 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+.explicatecontent{
+    height:100px;
+}
+
+.explicatetext{
+    color:#fff;
+    font-family: 'nanumsquare';
+    font-size: 1.3em;
+    margin-bottom: 1%;
+}
+
+.btn-primary {
+    --bs-btn-color: #fff;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #dfe29f;
+    --bs-btn-hover-border-color: #dfe29f;
+    --bs-btn-focus-shadow-rgb: 49,132,253;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: #dfe29f;
+    --bs-btn-active-border-color: #C0C53F;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #fff;
+    --bs-btn-disabled-bg: #dfe29f;
+    --bs-btn-disabled-border-color:#dfe29f;
+}
+
+.footerImg{
+    border-radius: 8%;
+    margin-top: 8%;
+}
+
+/*새로운 버튼 효과*/
+.go_btn {
+    padding-left: 16px;
+    border-radius: 8px;
+    display: block;
+    outline: none;
+    text-decoration: none;
+    font-size: 23px;
+    font-weight: bold;
+    color: black;
+    box-shadow: inset 0 0 0 2px black;
+    transition: box-shadow 0.5s ease, color 1s ease;
+    border: none;
+    width:115px;
+    height:50px;
+}
+.go_btn div {
+    display: flex;
+    overflow: hidden;
+    text-shadow: 0 27px 0px white;
+}
+.go_btn div span {
+    display: block;
+    backface-visibility: hidden;
+    font-style: normal;
+    transition: transform 0.25s ease;
+    transform: translateY(0) translateZ(0);
+}
+
+.go_btn div span:nth-child(1) {
+    transition-delay: 0.05s;
+}
+  
+.go_btn div span:nth-child(2) {
+    transition-delay: 0.1s;
+}
+  
+.go_btn div span:nth-child(3) {
+    transition-delay: 0.15s;
+}
+  
+.go_btn div span:nth-child(4) {
+    transition-delay: 0.2s;
+}
+  
+.go_btn:hover {
+    color: white;
+}
+  
+.go_btn:hover span {
+    transform: translateY(-30px);
+    text-shadow: 0 30px 0px white;
+}
+
